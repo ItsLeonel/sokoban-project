@@ -75,27 +75,27 @@ Para finalizar la implementación del modelo MVC de Sokoban en un plazo estricto
 ```mermaid
 gantt
     title Cronograma de Desarrollo de Sokoban (3 Días)
-    dateFormat  D
-    axisFormat Día %d
+    dateFormat  YYYY-MM-DD
+    axisFormat Día %j
 
     section Grupo 1
-    Layouts JavaFX y Celdas Visuales         :active, g1, 0, 1.5d
-    Enlace de Eventos y Renderizado Activo   :g1_int, after g1, 1d
+    Layouts JavaFX y Celdas Visuales         :active, g1, 2026-06-30, 36h
+    Enlace de Eventos y Renderizado Activo   :g1_int, after g1, 24h
     section Grupo 2
-    Modelado Estático (Pared, Suelo, Meta)   :active, g2, 0, 1d
-    Ajustes del Composite                    :g2_int, after g2, 1d
+    Modelado Estático (Pared, Suelo, Meta)   :active, g2, 2026-06-30, 24h
+    Ajustes del Composite                    :g2_int, after g2, 24h
     section Grupo 3
-    Entidades Móviles y Memento (Historial)  :active, g3, 0, 1.5d
-    Integración Undo/Redo                    :g3_int, after g3, 0.5d
+    Entidades Móviles y Memento (Historial)  :active, g3, 2026-06-30, 36h
+    Integración Undo/Redo                    :g3_int, after g3, 12h
     section Grupo 4
-    Composite Tablero y Colisiones           :active, g4, 0, 1.5d
-    Reglas e Integración de Facade           :g4_int, after g4, 1d
+    Composite Tablero y Colisiones           :active, g4, 2026-06-30, 36h
+    Reglas e Integración de Facade           :g4_int, after g4, 24h
     section Grupo 5
-    Infraestructura y Persistencia           :active, g5, 0, 1d
-    Integración Carga de Niveles             :g5_int, after g5, 1d
+    Infraestructura y Persistencia           :active, g5, 2026-06-30, 24h
+    Integración Carga de Niveles             :g5_int, after g5, 24h
     
     section Integración General
-    Pruebas y QA (Todos los grupos)          :crit, qa, 2.5d, 0.5d
+    Pruebas y QA (Todos los grupos)          :crit, qa, after g1_int, 12h
 ```
 
 *   **Día 1**: Cada grupo trabaja en el desarrollo aislado de sus clases utilizando las firmas y esqueletos proporcionados.
