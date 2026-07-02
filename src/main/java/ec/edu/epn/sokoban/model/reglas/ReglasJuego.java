@@ -7,14 +7,44 @@ import ec.edu.epn.sokoban.model.escenario.Tablero;
 import java.util.List;
 
 public class ReglasJuego {
+
     public ReglasJuego() {
     }
 
     public boolean validarMovimiento(Casilla origen, Direccion d, Tablero t) {
-        return false;
+        if (origen == null || d == null || t == null) {
+            return false;
+        }
+
+        int filaDestino = origen.getFila() + d.getDeltaFila();
+        int columnaDestino = origen.getColumna() + d.getDeltaColumna();
+
+        if (filaDestino < 0 || filaDestino >= t.getFilas()
+                || columnaDestino < 0 || columnaDestino >= t.getColumnas()) {
+            return false;
+        }
+
+        Casilla destino = t.obtenerCasilla(filaDestino, columnaDestino);
+
+        if (destino == null) {
+            return false;
+        }
+
+        return destino.esTransitable();
     }
 
     public boolean verificarVictoria(List<Meta> metas) {
-        return false;
+        if (metas == null || metas.isEmpty()) {
+            return false;
+        }
+
+        for (Meta meta : metas) {
+            if (!meta.isSatisfecha()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
+
